@@ -7,8 +7,8 @@ require ('mappings')
 -- Treesitter
 require('treesitter')
 
--- LSP
-require('mylsp')
+-- Coc
+require ('cocConf')
 
 -- Ntree
 require('nvimtree')
@@ -16,14 +16,8 @@ require('nvimtree')
 -- ToggleTerm
 require('toggle-term')
 
--- BufferLine
-require("bufferline").setup{}
-
 -- Telescope
 require('telescop')
-
--- Todo comments
-require('todo_comments')
 
 -- Legacy vim script
 vim.cmd([[
