@@ -7,8 +7,8 @@ require ('mappings')
 -- Treesitter
 require('treesitter')
 
--- Coc
-require ('cocConf')
+-- cmp
+require('cmpConfig')
 
 -- Ntree
 require('nvimtree')
@@ -24,3 +24,6 @@ vim.cmd([[
 	so ~/.config/nvim/legacy.vim
 ]])
 
+require 'colorizer'.setup()
+require("mason").setup()
+require("mason-lspconfig").setup()
