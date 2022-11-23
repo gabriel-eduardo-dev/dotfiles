@@ -1,14 +1,16 @@
 -- Plugins
 require ('plugins')
-
 -- Load Keybinds
 require ('mappings')
 
 -- Treesitter
 require('treesitter')
 
--- cmp
-require('cmpConfig')
+-- lsp 
+require("mason").setup();
+require("mason-lspconfig").setup()
+require("lsp/init")
+
 
 -- Ntree
 require('nvimtree')
@@ -25,5 +27,4 @@ vim.cmd([[
 ]])
 
 require 'colorizer'.setup()
-require("mason").setup()
-require("mason-lspconfig").setup()
+

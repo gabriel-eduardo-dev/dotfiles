@@ -3,14 +3,18 @@ require('packer').startup(function()
 	
 	-- Themes
 	use {
-		use 'morhetz/gruvbox',
-		use 'elvessousa/sobrio',
-		use 'joshdick/onedark.vim',
-		use 'tikhomirov/vim-glsl', -- Highlight for glsl files
-		use 'norcalli/nvim-colorizer.lua',
-		use "lukas-reineke/indent-blankline.nvim",
+		'morhetz/gruvbox',
+		'elvessousa/sobrio',
+		'joshdick/onedark.vim',
+		'tikhomirov/vim-glsl', -- Highlight for glsl files
+		'norcalli/nvim-colorizer.lua',
+		"lukas-reineke/indent-blankline.nvim",
 	}
-	use 'nvim-treesitter/nvim-treesitter'
+	use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+	use "windwp/nvim-ts-autotag"
 	use {
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
@@ -32,26 +36,26 @@ require('packer').startup(function()
 		requires = { {'nvim-lua/plenary.nvim'}
 		}
 	}
+	-- Snipts
+	use {
+		'L3MON4D3/LuaSnip',
+		'rafamadriz/friendly-snippets',
+		'hrsh7th/cmp-vsnip',
+		'hrsh7th/vim-vsnip',
+		}
 	-- Lsp
 	use {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
+		"neovim/nvim-lspconfig"
 	}
-	-- Autocomplete
+	-- Cmp
 	use {
-		use 'hrsh7th/cmp-nvim-lsp',
-		use 'hrsh7th/cmp-buffer',
-		use 'hrsh7th/cmp-path',
-		use 'hrsh7th/cmp-cmdline',
-		use 'hrsh7th/nvim-cmp',
-	}
-	-- Snipts
-	use {
-		use 'L3MON4D3/LuaSnip',
-		use 'saadparwaiz1/cmp_luasnip',
-		use "rafamadriz/friendly-snippets",
-		use 'hrsh7th/vim-vsnip',
-		use 'hrsh7th/vim-vsnip-integ',
+		'hrsh7th/cmp-nvim-lsp',
+		'hrsh7th/cmp-buffer',
+		'hrsh7th/cmp-path',
+		'hrsh7th/cmp-cmdline',
+		'hrsh7th/nvim-cmp',
+		'saadparwaiz1/cmp_luasnip'
 	}
 end)
