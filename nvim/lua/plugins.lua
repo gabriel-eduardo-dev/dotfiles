@@ -9,12 +9,25 @@ require('packer').startup(function()
 		'tikhomirov/vim-glsl', -- Highlight for glsl files
 		'norcalli/nvim-colorizer.lua',
 		"lukas-reineke/indent-blankline.nvim",
+		'Shatur/neovim-ayu',
+		'NTBBloodbath/doom-one.nvim',
+		'Mofiqul/vscode.nvim',
 	}
 	use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+	-- Git
+	use {
+		'mhinz/vim-signify',
+		'tpope/vim-fugitive',
+		'tpope/vim-rhubarb',
+		'junegunn/gv.vim'
+	}
+	use 'tpope/vim-surround'
 	use "windwp/nvim-ts-autotag"
+	use 'p00f/nvim-ts-rainbow'
+	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 	use {
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end

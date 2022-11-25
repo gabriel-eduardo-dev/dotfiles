@@ -11,7 +11,6 @@ require("mason").setup();
 require("mason-lspconfig").setup()
 require("lsp/init")
 
-
 -- Ntree
 require('nvimtree')
 
@@ -26,5 +25,5 @@ vim.cmd([[
 	so ~/.config/nvim/legacy.vim
 ]])
 
-require 'colorizer'.setup()
-
+require'colorizer'.setup()
+require("bufferline").setup{}

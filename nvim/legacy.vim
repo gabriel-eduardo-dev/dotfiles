@@ -1,10 +1,13 @@
-colorscheme gruvbox
+"colorscheme gruvbox
 " Theme colorscheme gruvbox
-let g:airline_theme='base16_gruvbox_dark_hard'
+" let g:airline_theme='badwolf'
+
+colorscheme onedark
+let g:airline_theme='onedark'
 
 syntax on
 
-set number
+set number relativenumber
 set ruler
 
 " Don't make noise
@@ -34,39 +37,29 @@ set updatetime=100
 
 set autoread
 set termguicolors
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'default'
-let g:airline_powerline_fonts = 1
 set t_Co=256
-let g:airline_theme='badwolf'
+let g:airline_powerline_fonts = 1
 
-" NOTE: You can use other key to expand snippet.
+set path=$PWD/**
 
-" Expand
-imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
-smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
+" switch between hpp and cpp
+function! SwitchSourceHeader()
+	if (expand ("%:e") == "cpp")
+		find %:t:r.hpp
+	elseif (expand ("%:e") == "c")
+		find %:t:r.h
+	elseif (expand ("%:e") == "hpp")
+		find %:t:r.cpp
+	else
+		find %:t:r.c
+	endif
+endfunction
 
-" Expand or jump
-imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+au BufEnter,BufNew *.cpp nnoremap <silent> çp :call SwitchSourceHeader()<CR>
+au BufEnter,BufNew *.hpp nnoremap <silent> çp :call SwitchSourceHeader()<CR>
 
-" Jump forward or backward
-imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
+au BufEnter,BufNew *.cpp nnoremap <silent> çvp :leftabove vs %<.hpp<CR>
+au BufEnter,BufNew *.hpp nnoremap <silent> çvp :rightbelow vs %<.cpp<CR>
 
-" Select or cut text to use as $TM_SELECTED_TEXT in the next snippet.
-" See https://github.com/hrsh7th/vim-vsnip/pull/50
-nmap        s   <Plug>(vsnip-select-text)
-xmap        s   <Plug>(vsnip-select-text)
-nmap        S   <Plug>(vsnip-cut-text)
-xmap        S   <Plug>(vsnip-cut-text)
-
-" If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
-let g:vsnip_filetypes = {}
-let g:vsnip_filetypes.javascriptreact = ['javascript']
-let g:vsnip_filetypes.typescriptreact = ['typescript']
+au BufEnter,BufNew *.cpp nnoremap <silent> çxp :leftabove split %<.hpp<CR>
+au BufEnter,BufNew *.hpp nnoremap <silent> çxp :rightbelow split %<.cpp<CR>
