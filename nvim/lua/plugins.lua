@@ -24,6 +24,7 @@ require('packer').startup(function()
 		'tpope/vim-rhubarb',
 		'junegunn/gv.vim'
 	}
+	use "Djancyp/better-comments.nvim"
 	use 'tpope/vim-surround'
 	use "windwp/nvim-ts-autotag"
 	use 'p00f/nvim-ts-rainbow'

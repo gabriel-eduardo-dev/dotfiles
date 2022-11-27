@@ -27,3 +27,4 @@ vim.cmd([[
 
 require'colorizer'.setup()
 require("bufferline").setup{}
+require('better-comment').Setup()

@@ -1,9 +1,8 @@
-"colorscheme gruvbox
-" Theme colorscheme gruvbox
-" let g:airline_theme='badwolf'
+colorscheme gruvbox
+let g:airline_theme='badwolf'
 
-colorscheme onedark
-let g:airline_theme='onedark'
+" colorscheme onedark
+" let g:airline_theme='onedark'
 
 syntax on
 
@@ -39,6 +38,9 @@ set autoread
 set termguicolors
 set t_Co=256
 let g:airline_powerline_fonts = 1
+
+" Unlimited Undos between shutdowns
+set undofile
 
 set path=$PWD/**
 
