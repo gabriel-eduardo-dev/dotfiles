@@ -30,7 +30,7 @@ local home = vim.fn.getenv("HOME")
 require('lspconfig')['jdtls'].setup{
 	on_attach = on_attach,
 	capabilities = capabilities,
-	root_dir = vim.fs.dirname(vim.fs.fifsd({'.gradle', 'gradlew', '.git', 'mvnw'}, { upward = true })[0]),
+	root_dir = vim.fs.dirname(vim.fs.find({'.gradle', 'gradlew', '.git', 'mvnw'}, { upward = true })[0]),
 	cmd = {
 		"java",
 		"-Declipse.application=org.eclipse.jdt.ls.core.id1",
