@@ -17,10 +17,14 @@ map('', '<right>', '<nop>')
 
 -- Remap Esc to 'çj'
 
-map('n', 'çj', '<Esc> :w <CR>')
-map('i', 'çj', '<Esc> :w <CR>')
-map('v', 'çj', '<Esc> :w <CR>')
-map('c', 'çj', '<Esc> :w <CR>')
+map('n', 'çj', '<Esc>')
+map('i', 'çj', '<Esc>')
+map('v', 'çj', '<Esc>')
+map('c', 'çj', '<Esc>')
+
+-- Save
+
+map('n', 'çs', '<Esc> :w <CR>')
 
 -- Remap exit to çq
 
@@ -47,8 +51,3 @@ map('n', 'çn', ':NvimTreeToggle <CR>')
 
 map('n', 'çf', ':bp <CR>')
 map('n', 'çl', ':bn <CR>')
-
--- Makefile
-
-map('n', 'çr', ':TermExec cmd=make <CR>')
-map('t', 'çr', '<CR><CR> make <CR>')

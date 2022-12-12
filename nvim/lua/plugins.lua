@@ -72,4 +72,5 @@ require('packer').startup(function()
 		'hrsh7th/nvim-cmp',
 		'saadparwaiz1/cmp_luasnip'
 	}
+ 	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 end)

@@ -57,6 +57,9 @@ function! SwitchSourceHeader()
 	endif
 endfunction
 
+au BufEnter,BufNew *.cpp nnoremap <silent> çr :TermExec cmd=make<CR>
+au BufEnter,BufNew *.hpp nnoremap <silent> çr :TermExec cmd=make<CR>
+
 au BufEnter,BufNew *.cpp nnoremap <silent> çp :call SwitchSourceHeader()<CR>
 au BufEnter,BufNew *.hpp nnoremap <silent> çp :call SwitchSourceHeader()<CR>
 
@@ -65,3 +68,6 @@ au BufEnter,BufNew *.hpp nnoremap <silent> çvp :rightbelow vs %<.cpp<CR>
 
 au BufEnter,BufNew *.cpp nnoremap <silent> çxp :leftabove split %<.hpp<CR>
 au BufEnter,BufNew *.hpp nnoremap <silent> çxp :rightbelow split %<.cpp<CR>
+
+au BufEnter,BufNew *.java nnoremap <silent> çr :TermExec cmd="./gradlew run"<CR>
+au BufEnter,BufNew *.java tnoremap <silent> çr ./gradlew run<CR>
