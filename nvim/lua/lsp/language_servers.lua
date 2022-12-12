@@ -30,7 +30,7 @@ local home = vim.fn.getenv("HOME")
 require('lspconfig')['jdtls'].setup{
 	on_attach = on_attach,
 	capabilities = capabilities,
-	root_dir = vim.fs.dirname(vim.fs.find({'.gradlew', '.git', 'mvnw'}, { upward = true })[0]),
+	root_dir = vim.fs.dirname(vim.fs.fifsd({'.gradle', 'gradlew', '.git', 'mvnw'}, { upward = true })[0]),
 	cmd = {
 		"java",
 		"-Declipse.application=org.eclipse.jdt.ls.core.id1",
@@ -51,4 +51,23 @@ require('lspconfig')['jdtls'].setup{
 		"-data",
 		home .. "/.local/share/nvim/mason/packages/jdtls/workspace",
 	},
+	settings = {
+		java = {
+			 configuration = {
+				-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
+				-- And search for `interface RuntimeOption`
+				-- The `name` is NOT arbitrary, but must match one of the elements from `enum ExecutionEnvironment` in the link above
+				runtimes = {
+					{
+						name = "JavaSE-17",
+						path = "/usr/lib/jvm/java-1.17.0-openjdk-amd64",
+					},
+					{
+						name = "JavaSE-1.8",
+						path = "/usr/lib/jvm/java-8-openjdk-amd64",
+					},
+				}
+			}
+		}
+	}
 };
