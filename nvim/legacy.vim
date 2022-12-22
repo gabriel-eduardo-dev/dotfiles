@@ -1,5 +1,4 @@
-colorscheme gruvbox
-let g:airline_theme='badwolf'
+colorscheme vscode 
 
 " colorscheme onedark
 " let g:airline_theme='onedark'
@@ -13,7 +12,7 @@ set ruler
 set visualbell
 
 " default file encoding
-set encoding=utf-8
+set encoding=utf8
 
 " Line wrap
 set wrap

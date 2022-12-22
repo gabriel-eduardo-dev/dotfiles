@@ -1,5 +1,6 @@
 -- Plugins
 require ('plugins')
+
 -- Load Keybinds
 require ('mappings')
 
@@ -25,6 +26,8 @@ vim.cmd([[
 	so ~/.config/nvim/legacy.vim
 ]])
 
+require('Bufferline')
+
+require('Lualine')
 require'colorizer'.setup()
-require("bufferline").setup{}
 require('better-comment').Setup()

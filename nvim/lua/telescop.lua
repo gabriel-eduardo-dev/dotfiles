@@ -29,7 +29,10 @@ require('telescope').setup{
 			'.jpg',
 			'.png',
 			'.jar',
-
+			'.o',
+			'.gif',
+			'build/',
+			'LICENSE',
 		},
 	}
 }

@@ -2,6 +2,10 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+require('lspconfig')['vimls'].setup{
+	on_attach = on_attach,
+	capabilities = capabilities,
+};
 require('lspconfig')['clangd'].setup{
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -21,8 +25,23 @@ require('lspconfig')['cmake'].setup{
 require('lspconfig')['sumneko_lua'].setup{
 	on_attach = on_attach,
 	capabilities = capabilities,
+	settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim', 'use', 'on_attach' }
+            }
+        }
+    }
 };
 require('lspconfig')['tsserver'].setup{
+	on_attach = on_attach,
+	capabilities = capabilities,
+};
+require('lspconfig')['gradle_ls'].setup{
+	on_attach = on_attach,
+	capabilities = capabilities,
+};
+require('lspconfig')['groovyls'].setup{
 	on_attach = on_attach,
 	capabilities = capabilities,
 };
@@ -30,7 +49,7 @@ local home = vim.fn.getenv("HOME")
 require('lspconfig')['jdtls'].setup{
 	on_attach = on_attach,
 	capabilities = capabilities,
-	root_dir = vim.fs.dirname(vim.fs.find({'.gradle', 'gradlew', '.git', 'mvnw'}, { upward = true })[0]),
+	root_dir = vim.fs.dirname(vim.fs.find({'pom.xml', 'build.xml', 'build.gradle.kts', 'build.gradle', 'settings.gradle', 'gradlew', '.git', 'mvnw'}, { upward = true })[0]),
 	cmd = {
 		"java",
 		"-Declipse.application=org.eclipse.jdt.ls.core.id1",
@@ -54,13 +73,10 @@ require('lspconfig')['jdtls'].setup{
 	settings = {
 		java = {
 			 configuration = {
-				-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
-				-- And search for `interface RuntimeOption`
-				-- The `name` is NOT arbitrary, but must match one of the elements from `enum ExecutionEnvironment` in the link above
 				runtimes = {
 					{
 						name = "JavaSE-17",
-						path = "/usr/lib/jvm/java-1.17.0-openjdk-amd64",
+						path = "/usr/lib/jvm/java-17-openjdk-amd64",
 					},
 					{
 						name = "JavaSE-1.8",

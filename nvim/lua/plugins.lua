@@ -43,8 +43,7 @@ require('packer').startup(function()
 	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
 		require("toggleterm").setup()
 	end}
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
+	use 'nvim-lualine/lualine.nvim'
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
 		requires = { {'nvim-lua/plenary.nvim'}

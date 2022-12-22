@@ -3,7 +3,7 @@ require("toggleterm").setup({
 	open_mapping =	[[çt]],
 	terminal_mappings = true,
 	start_in_insert = true,
-	direction = "horizontal",
+	direction = "float",
 	close_on_exit = true,
 	shell = vim.o.shell,
 	shade_terminals = false,
