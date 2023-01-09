@@ -2,7 +2,7 @@ local lualine = require('lualine')
 
 local config = {
 	options = {
-		theme = 'codedark',
+		theme = require('luaLineTheme').theme(),
 	},
 	sections = {
 		lualine_c = {},

@@ -1,7 +1,9 @@
-colorscheme vscode 
 
-" colorscheme onedark
-" let g:airline_theme='onedark'
+" transparent
+au ColorScheme * hi Normal ctermbg=none guibg=none
+au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
+
+colorscheme gruvbox 
 
 syntax on
 
