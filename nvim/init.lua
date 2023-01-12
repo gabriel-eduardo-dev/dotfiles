@@ -21,6 +21,9 @@ require('toggle-term')
 -- Telescope
 require('telescop')
 
+-- Trouble 
+require('Trouble')
+
 -- Legacy vim script
 vim.cmd([[
 	so ~/.config/nvim/legacy.vim
@@ -31,3 +34,5 @@ require('Bufferline')
 require('Lualine')
 require'colorizer'.setup()
 require('better-comment').Setup()
+
+require('gruvboxTheme')

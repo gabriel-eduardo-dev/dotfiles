@@ -3,7 +3,7 @@ require('packer').startup(function()
 	
 	-- Themes
 	use {
-		'morhetz/gruvbox',
+		'ellisonleao/gruvbox.nvim',
 		'elvessousa/sobrio',
 		'joshdick/onedark.vim',
 		'tikhomirov/vim-glsl', -- Highlight for glsl files
@@ -72,4 +72,6 @@ require('packer').startup(function()
 		'saadparwaiz1/cmp_luasnip'
 	}
  	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+	use {'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+	use 'https://github.com/tpope/vim-obsession'
 end)

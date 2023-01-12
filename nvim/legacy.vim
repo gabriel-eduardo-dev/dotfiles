@@ -3,7 +3,9 @@
 au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
+set background=dark
 colorscheme gruvbox 
+:highlight SignColumn guibg=transparent
 
 syntax on
 
@@ -72,3 +74,8 @@ au BufEnter,BufNew *.hpp nnoremap <silent> çxp :rightbelow split %<.cpp<CR>
 
 au BufEnter,BufNew *.java nnoremap <silent> çr :TermExec cmd="./gradlew run"<CR>
 au BufEnter,BufNew *.java tnoremap <silent> çr ./gradlew run<CR>
+
+set noshowmode  " to get rid of thing like --INSERT--
+set noshowcmd  " to get rid of display of last command
+set shortmess+=F  " to get rid of the file name displayed in the command line bar
+set cmdheight=0

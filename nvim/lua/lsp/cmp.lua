@@ -86,18 +86,17 @@ cmp.setup({
 	}),
     },
   sources = {
-    { name = 'luasnip' },
     { name = 'nvim_lsp'},
+    { name = 'luasnip' },
 	{ name = 'cmp_tabnine' },
-    { name = 'buffer'},
-	{ name = 'path' }
+	{ name = 'path' },
+    { name = 'buffer'}
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
       -- Kind icons
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
         nvim_lsp = " [LSP]",
         luasnip = " [Snippet]",
@@ -106,7 +105,7 @@ cmp.setup({
 		cmp_tabnine = " [Tabnine]",
       })[entry.source.name]
 	  local source = entry.source.name
-	  if source == 'nvim_lsp' or source == 'luasnip' or source == 'cmp_tabnine' then
+	  if source == 'luasnip' or source == 'nvim_lsp' or source == 'cmp_tabnine' or source == 'buffer' then
 	  	vim_item.dup = 0
       end
       return vim_item

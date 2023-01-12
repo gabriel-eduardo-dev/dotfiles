@@ -40,6 +40,10 @@ map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
+-- move around tabs
+map('n', '<C-j>l', ':tabnext <CR>')
+map('n', '<C-j>j', ':-tabnext <CR>')
+
 -- Reload configuration without restart nvim
 map('n', '<leader>r', ':so %<CR>')
 
