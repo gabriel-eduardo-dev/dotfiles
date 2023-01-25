@@ -53,6 +53,10 @@ require('lspconfig')['intelephense'].setup{
 	on_attach = on_attach,
 	capabilities = capabilities,
 };
+require('lspconfig')['bashls'].setup{
+	on_attach = on_attach,
+	capabilities = capabilities,
+};
 local home = vim.fn.getenv("HOME")
 require('lspconfig')['jdtls'].setup{
 	on_attach = on_attach,

@@ -4,7 +4,7 @@ au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 set background=dark
-colorscheme gruvbox 
+colorscheme onedark
 :highlight SignColumn guibg=transparent
 
 syntax on
