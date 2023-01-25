@@ -1,0 +1,5 @@
+#!/bin/bash
+
+url=$1
+
+yt-dlp -o "%(playlist_index)s-%(title)s.%(ext)s" --write-auto-sub -q --progress --no-warnings --audio-quality 0 -f "bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"  --yes-playlist --embed-subs $url
