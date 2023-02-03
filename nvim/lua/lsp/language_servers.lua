@@ -84,7 +84,7 @@ require('lspconfig')['jdtls'].setup{
 	},
 	settings = {
 		java = {
-			 configuration = {
+			configuration = {
 				runtimes = {
 					{
 						name = "JavaSE-17",
@@ -94,6 +94,32 @@ require('lspconfig')['jdtls'].setup{
 						name = "JavaSE-1.8",
 						path = "/usr/lib/jvm/java-8-openjdk-amd64",
 					},
+				},
+				eclipse = {
+					downloadSources = true,
+				},
+				configuration = {
+					updateBuildConfiguration = "interactive",
+				},
+				maven = {
+					downloadSources = true,
+				},
+				implementationsCodeLens = {
+					enabled = true,
+				},
+				referencesCodeLens = {
+					enabled = true,
+				},
+				references = {
+					includeDecompiledSources = true,
+				},
+				inlayHints = {
+					parameterNames = {
+						enabled = "all", -- literals, all, none
+					},
+				},
+				format = {
+					enabled = false,
 				}
 			}
 		}

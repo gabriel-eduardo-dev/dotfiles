@@ -31,8 +31,6 @@ require('telescope').setup{
 			'.png',
 			'.jar',
 			'.gif',
-			'build/',
-			'deps/',
 			'LICENSE'
 		},
 	}
