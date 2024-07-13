@@ -4,7 +4,6 @@ au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 set background=dark
-colorscheme onedark
 :highlight SignColumn guibg=transparent
 
 syntax on

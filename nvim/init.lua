@@ -32,7 +32,11 @@ vim.cmd([[
 require('Bufferline')
 
 require('Lualine')
-require'colorizer'.setup()
 require('better-comment').Setup()
+require("ibl").setup()
 
-require('gruvboxTheme')
+-- Enable telescope theme
+vim.g.gruvbox_baby_telescope_theme = 1
+-- Enable transparent mode
+vim.g.gruvbox_baby_transparent_mode = 1
+vim.cmd[[colorscheme gruvbox-baby]]
